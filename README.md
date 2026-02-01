@@ -124,6 +124,7 @@ The project report focuses on the key results relevant to the study objectives.
 ---
 
 ## Author
-Bharath
+Bharath Pagidala
+
 MSc Business Analytics
 
