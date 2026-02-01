@@ -119,7 +119,7 @@ The study demonstrates that clustering techniques effectively identify suspiciou
 ---
 
 ## Note
-The Jupyter notebooks contain exploratory analysis and multiple outputs. The project report focuses on the key results relevant to the study objectives.
+The project report focuses on the key results relevant to the study objectives.
 
 ---
 
