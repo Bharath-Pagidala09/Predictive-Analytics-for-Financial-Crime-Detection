@@ -3,44 +3,50 @@
 ## Overview
 This project investigates financial crime and money laundering using 
 a data-driven approach. Using the Black Money Transaction dataset 
-(4,509 transactions), I built and evaluated multiple machine learning 
-models to detect suspicious financial behaviour, classify risk levels, 
+(4,509 transactions), multiple machine learning models were built and 
+evaluated to detect suspicious financial behaviour, classify risk levels, 
 and predict relationships between transaction features.
 
 ---
 
-## What I Did
+## What Was Done
 
 ### 1. Data Preprocessing
-The original dataset had 10,000 rows and 14 columns. I cleaned it down 
+The original dataset had 10,000 rows and 14 columns. It was cleaned down 
 to 4,509 rows and 9 columns by removing irrelevant columns like 
-Transaction ID and Destination Country. I also handled missing values, 
-standardised formats, and converted the Money Laundering Risk Score 
-into categories (High/Low) to make it suitable for analysis.
+Transaction ID and Destination Country. Missing values were handled, 
+formats were standardised, and the Money Laundering Risk Score was 
+converted into categories (High/Low) to make it suitable for analysis.
+
+---
 
 ### 2. Exploratory Data Analysis
-I ran descriptive statistics and found that the average transaction 
-amount was $2.5 million USD, with an average of 4.5 shell companies 
-involved per transaction. Histograms showed near-normal distributions 
-across all numerical variables, and boxplots confirmed no significant 
-outliers between high and low risk groups.
+Descriptive statistics revealed that the average transaction amount was 
+$2.5 million USD, with an average of 4.5 shell companies involved per 
+transaction. Histograms showed near-normal distributions across all 
+numerical variables, and boxplots confirmed no significant outliers 
+between high and low risk groups.
+
+---
 
 ### 3. Clustering
-I used two clustering methods to find hidden patterns in the data:
+Two clustering methods were used to find hidden patterns in the data:
 
-- **K-Means:** I tested cluster values from K=2 to K=11 and selected 
-  the best K using the Davies-Bouldin Score and Silhouette Score. 
+- **K-Means:** Cluster values from K=2 to K=11 were tested and the best 
+  K was selected using the Davies-Bouldin Score and Silhouette Score. 
   The optimal K was 8 for high-risk and 8 for low-risk transactions. 
   Results showed clear groupings where high-risk clusters had large 
   transaction amounts and many shell companies involved.
 
 - **Hierarchical Clustering:** Using agglomerative clustering and 
-  dendrograms, I found a 2-cluster solution for high-risk and a 
+  dendrograms, a 2-cluster solution was found for high-risk and a 
   3-cluster solution for low-risk data, which better matched the 
   High/Medium/Low risk classification.
 
+---
+
 ### 4. Classification
-I trained two models to classify transactions as High or Low risk:
+Two models were trained to classify transactions as High or Low risk:
 
 - **Logistic Regression:** Accuracy 50.78%, F1 Score 50.43%, AUC 0.5269
 - **Random Forest:** Accuracy 52.55%, F1 Score 52.36%, AUC 0.5269
@@ -50,9 +56,11 @@ This suggests the dataset needs further feature engineering,
 balancing using techniques like SMOTE, and hyperparameter tuning 
 to improve performance.
 
+---
+
 ### 5. Regression
-I investigated whether transaction amount (USD) could predict the 
-number of shell companies involved:
+The relationship between transaction amount (USD) and the number of 
+shell companies involved was investigated:
 
 - **Linear Regression:** R-Squared = 0.0009 — very weak fit
 - **Polynomial Regression (Degree 2):** R-Squared = 0.0014 — 
@@ -74,5 +82,5 @@ features and better data quality in future work.
 ---
 
 ## Tools Used
-- Python (Scikit-learn, Pandas, Matplotlib)
-- Excel / Power Query
+- **Python** — clustering, classification, regression modelling
+- **Excel / Power Pivot** — data cleaning and preprocessing
